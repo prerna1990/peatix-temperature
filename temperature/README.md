@@ -1,12 +1,9 @@
 # peatix-temperature-conversion
 temperature convertor spring boot project
 
-### Requirement/Assumptions
-- Develop HTTP API to convert Farenheit to Celcius and vice vera
-- Assumed if the source unit and destination unit is same then output as input value , It will ensure not to break the business functionality.
-- For any invalid request , it will through the exception as "BAD REQUEST"
-- If Service is not ready within the configured time , the API will throw an exception "Service not ready exception"
-- At the end of the API call, application will call the Post construct.
+### Requirement
+- Develop HTTP API to convert Farenheit to Celcius and vice versa
+- Same end-pont should be used for both the conversion.
 
 ## Instructions on how to build and run your app
 There are several ways to run a Spring Boot application on your local machine.
@@ -21,18 +18,12 @@ gradle build
 gradle bootRun
 ```
 
-From Ide
+###From Ide
 
 One way is to execute the `main` method in the `com.peatix.conversion.TemperatureConvertorApplication` class from your IDE.
 
 Alternatively you can use the [Spring Boot gradle plugin]
 
-### Approach - Why REST ?
-````
---  One of the most popular types of API is REST or, as they’re sometimes known, RESTful APIs. There are many benefits of REST or RESTful APIs — theye designed to take advantage of existing protocols. While REST - or Representational State Transfer - can be used over nearly any protocol, when used for web APIs it typically takes advantage of HTTP. This means that developers have no need to install additional software or libraries when creating a REST API.
---  One of the key advantages of REST APIs is that they provide a great deal of flexibility. Data is not tied to resources or methods, so REST can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia. This flexibility allows developers to build an API that meets your needs while also meeting the needs of very diverse customers. 
---  Rest API has Client-server, Stateless,Uniform Interface,Code on Demand and Caching features, in future if we need to acheive the scalablity and caching for certian inputs combination we can perform this easiliy with REST. 
-````
 ## POST /temperature/v1/convert
 
 ### Header
@@ -156,3 +147,23 @@ gradle Test
 }
 
 ```
+### Approach - Why REST ?
+````
+--  One of the most popular types of API is REST or, as they’re sometimes known, RESTful APIs. There are many benefits of REST or RESTful APIs — theye designed to take advantage of existing protocols. While REST - or Representational State Transfer - can be used over nearly any protocol, when used for web APIs it typically takes advantage of HTTP. This means that developers have no need to install additional software or libraries when creating a REST API.
+--  One of the key advantages of REST APIs is that they provide a great deal of flexibility. Data is not tied to resources or methods, so REST can handle multiple types of calls, return different data formats and even change structurally with the correct implementation of hypermedia. This flexibility allows developers to build an API that meets your needs while also meeting the needs of very diverse customers. 
+--  Rest API has Client-server, Stateless,Uniform Interface,Code on Demand and Caching features, in future if we need to acheive the scalablity and caching for certian inputs combination we can perform this easiliy with REST. 
+````
+
+### Design Approach.
+- As per requirement for HTTP API development , i have selected the `REST API` as most suitable due to above advantage.
+- Due to the popularity of REST , It can be easily used as microservices in the future.
+- I have added Service as interface , so that in near future if we want to add more conversion units , it can be easily extendable.
+- Assumed if the source unit and destination unit is same then output as input value , It will ensure not to break the business functionality.
+- For implementation logic, irrespective of case of source unit and destination unit value converted as "UPPERCASE".
+- If new conversion required, we can add the mapping easily in enum and API should work with other end-point.
+- Future changes can be easily adaptable in this approach.
+- Converted response values kept as double data type , so that it can be consumed easily by other services in code without conversion.
+  - if scope of this changes in terms of decimal values precision then we might change the datatype from Double to String for `convertedValue` and `inputValue`.
+- For any invalid request , it will through the exception as "BAD REQUEST"
+- If Service is not ready within the configured time , the API will throw an exception "Service not ready exception"
+- At the end of the API call, application will call the Post construct.
