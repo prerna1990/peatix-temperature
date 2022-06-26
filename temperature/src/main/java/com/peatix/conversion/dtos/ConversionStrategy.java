@@ -1,7 +1,7 @@
-package com.peatix.temperature.dtos;
+package com.peatix.conversion.dtos;
 
-import com.peatix.temperature.service.TemperatureConvertorService;
-import com.peatix.temperature.service.TemperatureConvertorServiceImpl;
+import com.peatix.conversion.service.TemperatureConvertorService;
+import com.peatix.conversion.service.TemperatureConvertorServiceImpl;
 
 public enum ConversionStrategy {
 

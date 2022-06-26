@@ -1,7 +1,7 @@
-package com.peatix.temperature.service;
+package com.peatix.conversion.service;
 
-import com.peatix.temperature.dtos.ConversionRequest;
-import com.peatix.temperature.dtos.ConversionResponse;
+import com.peatix.conversion.dtos.ConversionRequest;
+import com.peatix.conversion.dtos.ConversionResponse;
 import org.springframework.stereotype.Service;
 
 @Service

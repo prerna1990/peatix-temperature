@@ -1,4 +1,4 @@
-package com.peatix.temperature.service;
+package com.peatix.conversion.service;
 
 
 import lombok.Getter;

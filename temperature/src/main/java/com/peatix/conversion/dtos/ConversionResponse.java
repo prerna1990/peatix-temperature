@@ -1,4 +1,4 @@
-package com.peatix.temperature.dtos;
+package com.peatix.conversion.dtos;
 
 
 import lombok.AllArgsConstructor;

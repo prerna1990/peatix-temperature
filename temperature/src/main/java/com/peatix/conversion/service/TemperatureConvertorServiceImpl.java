@@ -1,8 +1,8 @@
-package com.peatix.temperature.service;
+package com.peatix.conversion.service;
 
-import com.peatix.temperature.dtos.ConversionRequest;
-import com.peatix.temperature.dtos.ConversionResponse;
-import com.peatix.temperature.dtos.ConversionStrategy;
+import com.peatix.conversion.dtos.ConversionRequest;
+import com.peatix.conversion.dtos.ConversionResponse;
+import com.peatix.conversion.dtos.ConversionStrategy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

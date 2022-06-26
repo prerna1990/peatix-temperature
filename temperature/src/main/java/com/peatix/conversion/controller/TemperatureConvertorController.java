@@ -1,10 +1,9 @@
-package com.peatix.temperature.controller;
+package com.peatix.conversion.controller;
 
-import com.peatix.temperature.dtos.ConversionRequest;
-import com.peatix.temperature.dtos.ConversionResponse;
-import com.peatix.temperature.dtos.ConversionStrategy;
-import com.peatix.temperature.service.ApplicationStateService;
-import com.peatix.temperature.service.TemperatureConvertorService;
+import com.peatix.conversion.dtos.ConversionRequest;
+import com.peatix.conversion.dtos.ConversionResponse;
+import com.peatix.conversion.service.ApplicationStateService;
+import com.peatix.conversion.service.TemperatureConvertorService;
 import javax.annotation.PostConstruct;
 import lombok.Generated;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/temperature/v1")
 @Slf4j
-public class ConversionController {
+public class TemperatureConvertorController {
 	@Autowired
 	TemperatureConvertorService temperatureConvertorService;
 

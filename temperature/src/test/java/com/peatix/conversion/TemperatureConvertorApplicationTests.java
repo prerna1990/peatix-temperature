@@ -1,9 +1,9 @@
-package com.peatix.temperature;
+package com.peatix.conversion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.peatix.temperature.dtos.ConversionResponse;
+import com.peatix.conversion.dtos.ConversionResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
